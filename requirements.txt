@@ -1,0 +1,6 @@
+gensim==0.13.4.1
+matplotlib==2.0.0
+numpy==1.11.2
+PyNLPIR==0.4.6
+tensorflow_gpu==0.12.0rc0
+tensorflow==1.0.1

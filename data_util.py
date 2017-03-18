@@ -2,11 +2,9 @@
 """ 完成数据的预处理, 主要是向模型提供embedding_matrix, train_data, valid_data, test_data
     1. 函数load_embedding()得到embedding_matrix
     2. load_data() 得到train_data, valid_data, test_data.   data结构：[...(sentence, label)...]
-    3. 准确率提不上去，会不会是jieba分词性能不够好，
     """
 import os
 import tensorflow as tf
-import jieba
 import pynlpir
 import cPickle as pickle
 import sys
@@ -41,7 +39,6 @@ def _read_words(path, stop_word_flag=False, read_to_sentences=False):
         for line in file:
             sent = line.strip()  # 砍掉头部和尾部的空字符
             if not stop_word_flag:
-                # words = jieba.cut(sentence=sent) # 分词， 返回结果是一个生成器
                 words = pynlpir.segment(sent, pos_tagging=False)
                 if read_to_sentences:
                     data.append(words)
