@@ -4,10 +4,7 @@ import tensorflow as tf
 class CNN(object):
     def __init__(self, keep_prob, filter_list,depth, learning_rate, batch_size, is_train, is_static, sentences, labels,
                  embeddings, sentence_length, l2_lambda):
-        """TODO:
-                1. 添加 valid test 选项
-                2.
-
+        """
         :param keep_prob: dropout 的概率
         :param depth: 滤波器的 output_channel
         :param filter_list:  包含多个滤波器的列表
